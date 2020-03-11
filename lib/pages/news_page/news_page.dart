@@ -13,75 +13,65 @@ class NewsPage extends StatefulWidget {
 class _NewsPageState extends State<NewsPage> {
   Widget _buildArticleWidget(Articles article) {
     final formatter = DateFormat("yyyy-MM-dd");
-    return Container(
-      height: 230,
-      width: Helper.getResponsiveWidth(90, context),
-      child: Stack(
-        children: <Widget>[
-          Image.network(
-            article.urlToImage,
-            width: Helper.getResponsiveWidth(90, context),
-            height: 230,
-            // fit: BoxFit.cover,
+
+    return InkWell(
+      onTap: (){
+        NewPageArgs newPageArgs = NewPageArgs(url: article.url, title: article.title);
+        Navigator.pushNamed(context, '/news_webview', arguments: newPageArgs);
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage(article.urlToImage),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.darken)
           ),
-          Container(
-            color: Colors.black.withOpacity(0.6),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  child: Text(
-                    article.source.name,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                child: Text(
+                  article.source.name,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
-                  color: Colors.red,
-                  padding: EdgeInsets.all(5),
                 ),
-                SizedBox(
-                  height: 15,
-                ),
-                Text(
-                  article.title,
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  article.author ?? '',
-                  style: TextStyle(color: Colors.white, fontSize: 16,),
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  formatter.format(DateTime.parse(article.publishedAt)),
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                ),
-//                FlatButton(
-//                  onPressed: () {},
-//                  child: Padding(
-//                    padding: const EdgeInsets.all(8.0),
-//                    child: Text(
-//                      'Click Link to View',
-//                      style: TextStyle(color: Colors.green),
-//                    ),
-//                  ),
-//                )
-              ],
-            ),
+                color: Colors.red,
+                padding: EdgeInsets.all(5),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text(
+                article.title,
+                style: TextStyle(color: Colors.white, fontSize: 16),
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                article.author ?? '',
+                style: TextStyle(color: Colors.white, fontSize: 16,),
+                overflow: TextOverflow.ellipsis,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                formatter.format(DateTime.parse(article.publishedAt)),
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       providers: providers,
       child: MaterialApp(
         title: 'News App',
-        theme: ThemeData.from(colorScheme: ColorScheme.fromSwatch(accentColor: Colors.blueAccent)).copyWith(
+        theme: ThemeData.from(colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)).copyWith(
             pageTransitionsTheme: const PageTransitionsTheme(
               builders: <TargetPlatform, PageTransitionsBuilder>{
                 TargetPlatform.android: ZoomPageTransitionsBuilder(),

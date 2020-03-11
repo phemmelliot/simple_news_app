@@ -45,6 +45,7 @@ abstract class BaseModel extends ChangeNotifier {
   }
 
   void setGenericErrorMessage(Response response, BuildContext context, {Function retry}){
+    // Take note that 600 is a status code I created myself to notify the viewmodels that the error is from dio
     if(response.statusCode == 600) {
       Helper.showNotificationDialog(context, retry);
     } else {

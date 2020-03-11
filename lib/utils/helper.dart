@@ -238,3 +238,9 @@ class Helper {
     return errorDescription;
   }
 }
+
+class NewPageArgs {
+  String url;
+  String title;
+  NewPageArgs({this.url, this.title});
+}
