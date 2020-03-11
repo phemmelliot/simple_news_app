@@ -69,92 +69,11 @@ class _NewsPageState extends State<NewsPage> {
                 formatter.format(DateTime.parse(article.publishedAt)),
                 style: TextStyle(color: Colors.white, fontSize: 16),
               ),
-//                FlatButton(
-//                  onPressed: () {},
-//                  child: Padding(
-//                    padding: const EdgeInsets.all(8.0),
-//                    child: Text(
-//                      'Click Link to View',
-//                      style: TextStyle(color: Colors.green),
-//                    ),
-//                  ),
-//                )
             ],
           ),
         ),
       ),
     );
-//    return Container(
-//      height: 230,
-//      width: Helper.getResponsiveWidth(90, context),
-//      child: Stack(
-//        children: <Widget>[
-//          Image.network(
-//            article.urlToImage,
-//            width: Helper.getResponsiveWidth(90, context),
-//            height: 230,
-//            // fit: BoxFit.cover,
-//          ),
-//          Container(
-//            color: Colors.black.withOpacity(0.6),
-//          ),
-//          Padding(
-//            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-//            child: Column(
-//              crossAxisAlignment: CrossAxisAlignment.start,
-//              children: <Widget>[
-//                Container(
-//                  child: Text(
-//                    article.source.name,
-//                    style: TextStyle(
-//                      color: Colors.white,
-//                      fontSize: 20,
-//                      fontWeight: FontWeight.bold,
-//                    ),
-//                  ),
-//                  color: Colors.red,
-//                  padding: EdgeInsets.all(5),
-//                ),
-//                SizedBox(
-//                  height: 15,
-//                ),
-//                Text(
-//                  article.title,
-//                  style: TextStyle(color: Colors.white, fontSize: 16),
-//                  maxLines: 3,
-//                  overflow: TextOverflow.ellipsis,
-//                ),
-//                SizedBox(
-//                  height: 10,
-//                ),
-//                Text(
-//                  article.author ?? '',
-//                  style: TextStyle(color: Colors.white, fontSize: 16,),
-//                  overflow: TextOverflow.ellipsis,
-//                ),
-//                SizedBox(
-//                  height: 10,
-//                ),
-//                Text(
-//                  formatter.format(DateTime.parse(article.publishedAt)),
-//                  style: TextStyle(color: Colors.white, fontSize: 16),
-//                ),
-////                FlatButton(
-////                  onPressed: () {},
-////                  child: Padding(
-////                    padding: const EdgeInsets.all(8.0),
-////                    child: Text(
-////                      'Click Link to View',
-////                      style: TextStyle(color: Colors.green),
-////                    ),
-////                  ),
-////                )
-//              ],
-//            ),
-//          ),
-//        ],
-//      ),
-//    );
   }
 
   @override
