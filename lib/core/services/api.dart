@@ -1,11 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:news_flutter_app/utils/helper.dart';
+import 'package:news_flutter_app/utils/keys.dart';
 
 class ApiClient {
   static Dio getClient({String baseUrl = 'http://newsapi.org/v2/', bool hasTimeout = true,}) {
     Dio dio = Dio();
     Map<String, dynamic> queryParameters = {
-      'apiKey': '32b57538efdf42cd8a4a2262ff12a58c',
+      'apiKey': newsApiKey,
     };
 
     dio.options.baseUrl = baseUrl;
